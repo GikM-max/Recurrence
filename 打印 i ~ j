@@ -1,0 +1,13 @@
+int print(int i, int j)
+{
+  if ( i > j ) return;
+  cout << i << endl;
+  print(i+1 , j);
+}
+int main()
+{
+  int re;
+  re = print(1, 8);
+  cout << re << " ";
+  return 0;  
+}
