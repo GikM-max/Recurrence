@@ -1,0 +1,29 @@
+/*
+*找重复：求数组arr中的元素和，相当于求 arr[0] + arr[arr.length - 1]
+*找变化：每次数组长度减一
+*找边界：如果数组长度为空，则退出
+*
+*/
+
+#include<iostream>
+using namespace std;
+
+int addFun(int arr[], int arr_size) 
+{
+    if (arr_size == 0) {  // 如果数组为空
+        return 0;
+    } else if (arr_size == 1) {  // 数组长度为1
+        return arr[arr_size - 1];
+    }
+    return  arr[arr_size - 1] + addFun(arr, arr_size - 1);  // 数组长度依次减一， 这就是子问题变化参数，数组的长度
+}
+
+
+int main()
+{
+    const int arr_size = 5;
+    int arr[] = {1, 2, 3, 4, 5};
+    int res = addFun(arr,arr_size);
+    cout << res << " ";
+    return 0;
+}
