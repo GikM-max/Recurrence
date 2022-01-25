@@ -1,0 +1,42 @@
+/* 
+*找重复：将字符串最后一个元素取出来，与字符串前面的元素进行拼接
+*找变化：
+*找边界：字符串为空串
+*/
+
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+string  f(string str ){
+	int len=str.length() ;
+	if (len<=1)
+		return str;                
+	return f(str.substr( 1))+str.substr(0,1);  // substr(0,1)表示从下标0开始取一个字符形成的串
+}                                           // substr(1)表示从下标1开始到结尾形成的串
+int main()
+{
+	string sa="wewe89r"; 
+	cout<<f(sa);
+	return 0;
+}
+
+
+
+
+// 字符串反转方法二
+
+#include<iostream>
+#inlcude<string>
+#include<algorithm>
+using namespace std;
+int main()
+{
+  string str;
+  cout << "输入原字符串：" << endl;
+  cin >> str;
+  reverse(str.begin(), str.end());  // 采用reverse函数进行反转  outputstream[len-i-1]=inputstream[i];  //  采用for循环也可以进行反转
+  cout << str;
+  return 0;
+}
